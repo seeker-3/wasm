@@ -1,0 +1,16 @@
+
+[package]
+name = "rust-wasm-bg"
+version = "0.1.0"
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = "*"
+js-sys = "*"
+web-sys = "*"
+
+[build]
+target = "wasm32-unknown-unknown"
