@@ -1,11 +1,14 @@
-run: main wat main.ts
+run:
 	deno run --allow-read main.ts
 
-wat: main
-	wasm2wat main.wasm -o out.wat
+loop: src/loop.wat
+	wat2wasm src/loop.wat -o build/loop.wasm
 
-memory:
-	wasm2wat memory.wasm -o memory.wat
+memory: src/memory.wat
+	wat2wasm src/memory.wat -o build/memory.wasm
 
-main: main.wat
-	wat2wasm main.wat -o main.wasm
+main: src/main.wat
+	wat2wasm src/main.wat -o build/main.wasm
+
+clean:
+	rm -f build/*

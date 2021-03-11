@@ -1,3 +1,4 @@
-const importObject = { console: { log: (x: number) => console.log(x) } }
-const bytes = await Deno.readFile('./main.wasm')
+import { fileName, importObject } from './lib/loop.ts'
+
+const bytes = await Deno.readFile(fileName)
 await WebAssembly.instantiate(bytes, importObject)
