@@ -1,0 +1,17 @@
+[package]
+name = 'rust-wasm-bg'
+version = '0.1.0'
+edition = '2018'
+
+[lib]
+crate-type = ['cdylib']
+
+[dependencies]
+wasm-bindgen = { version = '*', features = ['nightly'] }
+js-sys = '*'
+
+[dependencies.web-sys]
+version = '0.3.4'
+features = ['Window', 'Document', 'HtmlElement']
+# [build]
+# target = 'wasm32-unknown-unknown'
